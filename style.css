@@ -1,0 +1,300 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .main-container {
+            background: black;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 85%;
+            min-height: 100vh;
+            margin: auto;
+        }
+        
+        .logo {
+            color: #f2bf31;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 20px;
+            position: relative;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .navlist {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .navlinks {
+            color: white;
+            position: relative;
+            font-size: 0.9rem;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        
+        .active {
+            color: #f2bf31;
+        }
+        
+        .navlinks:hover {
+            color: #f2bf31;
+        }
+        
+        .navlinks::before,
+        .active::before {
+            content: '';
+            position: absolute;
+            background: #f2bf31;
+            width: 0%;
+            height: 0.1rem;
+            bottom: -10px;
+            left: 0;
+            transition: width 0.3s ease-in-out;
+        }
+        
+        .navlinks:hover::before,
+        .active::before {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            z-index: 4;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .fa-bars {
+            font-size: 1.7rem;
+            color: white;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .image-cont {
+            width: 24rem;
+            position: relative;
+            max-width: 100%;
+        }
+        
+        .image-cont::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #f2bf31;
+            border-radius: 50%;
+            z-index: -1;
+            transform: rotate(60deg);
+        }
+        
+        .hero-sec {
+            isolation: isolate;
+            display: flex;
+            align-items: center;
+            gap: 14rem;
+            min-height: calc(100vh - 14vh);
+            padding-bottom: 2rem;
+        }
+        
+        .image-cont::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(transparent, black 80%);
+            height: 6rem;
+            width: 100%;
+        }
+        
+        h4 {
+            color: #f2bf31;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 4rem;
+            line-height: 1.2;
+        }
+        
+        span {
+            color: #f2bf31;
+        }
+        
+        p {
+            max-width: 500px;
+            color: rgb(223, 213, 213);
+            font-size: 0.95rem;
+            line-height: 1.6rem;
+            margin-block: 1rem;
+        }
+        
+        .btn-cont {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        button {
+            background: #f2bf31;
+            font-size: 0.9rem;
+            border: 0.1rem solid #f2bf31;
+            padding: 0.7rem 0.8rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .b-btn {
+            background: transparent;
+            color: white;
+        }
+        
+        .b-btn:hover {
+            background: #f2bf31;
+            color: black;
+        }
+        
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: black;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 3;
+            transition: opacity 0.3s ease;
+        }
+        
+        @media screen and (max-width: 1024px) {
+            .hero-sec {
+                gap: 5rem;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .hero-sec {
+                gap: 3rem;
+            }
+            
+            h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media screen and (max-width: 428px) {
+            .navlist {
+                flex-direction: column;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.95);
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                padding-block: 3rem;
+                transition: 0.5s ease-in-out;
+                z-index: 4;
+            }
+            
+            .active {
+                color: #f2bf31 !important;
+            }
+            
+            .navlinks,
+            .navlinks:hover {
+                color: white !important;
+                font-size: 1.2rem;
+                padding: 0.5rem 0;
+            }
+            
+            .active::before,
+            .navlinks::before {
+                background: #f2bf31;
+                bottom: 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero-sec {
+                flex-direction: column;
+                margin-top: 3rem;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .image-cont {
+                width: 80vw;
+                max-width: 18rem;
+            }
+            
+            .image-cont::before {
+                width: 80vw;
+                height: 100%;
+                max-width: 18rem;
+            }
+            
+            p {
+                max-width: 100%;
+            }
+            
+            .btn-cont {
+                justify-content: center;
+            }
+            
+            .overlay-active {
+                opacity: 0.6;
+                visibility: visible;
+            }
+            
+            .navlist-active {
+                left: 0;
+            }
+        }
+        
+        @media screen and (max-width: 360px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .btn-cont {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
